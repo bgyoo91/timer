@@ -16,10 +16,9 @@ namespace asio = boost::asio;
 // local(KST) to UTC conversion
 typedef boost::date_time::local_adjustor<posix_time::ptime, 9, posix_time::no_dst> kst;
 
-std::string pretty_time(std::chrono::nanoseconds duration);
 void recording(const boost::system::error_code&, asio::deadline_timer*);
 
-int main(int argc, char* argv)
+int main(int argc, char* argv[])
 {
     asio::io_service io_service;
     asio::deadline_timer timer(io_service);
